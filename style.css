@@ -39,6 +39,7 @@ body {
     margin-bottom: var(--display-margin-bottom);
     overflow: hidden;
     font-size: 4rem;
+    font-weight: 600;
     font-family: sans-serif;
     text-align: end;
 }
@@ -61,7 +62,7 @@ body {
     cursor: pointer;
 }
 
-.zero {
+#zero {
     flex-grow: 2;
 }
 
@@ -73,6 +74,6 @@ body {
     background-color: #FF8F1F;
 }
 
-.number, .decimal-point {
+.number, #decimal-point {
     background-color: #217C7E;
 }

@@ -38,7 +38,7 @@ body {
     height: var(--display-height);
     margin-bottom: var(--display-margin-bottom);
     overflow: hidden;
-    font-size: 4rem;
+    font-size: 4.05rem;
     font-weight: 600;
     font-family: sans-serif;
     text-align: end;
@@ -74,6 +74,6 @@ body {
     background-color: #FF8F1F;
 }
 
-.number, #decimal-point {
+.number {
     background-color: #217C7E;
 }

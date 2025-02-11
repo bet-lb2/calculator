@@ -6,8 +6,6 @@ const toPercent = document.getElementById("to-percent");
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 
-// console.log(buttons)
-
 const add = (a, b) => {
     return a + b;
 }
@@ -45,12 +43,6 @@ const operate = (operator, num1, num2) => {
     }
 }
 
-const displayText = () => {
-    // display.innerText = firstNum || "0";
-    
-}
-
-
 buttons.forEach(button => {
     button.addEventListener("mousedown", (e) => {
         e.target.style.opacity = "0.5";
@@ -69,6 +61,9 @@ allClear.addEventListener("click", () => {
 
 numbers.forEach(number => {
     number.addEventListener("click", (e) => {
+        if (e.target.id === "decimal-point" && /\./.test(display.innerText)) {
+            return;
+        }
         display.innerText += e.target.innerText;
     })
 })
@@ -76,6 +71,9 @@ numbers.forEach(number => {
 operators.forEach(element => {
     element.addEventListener("click", (e) => {
         if (!(e.target.id === "equal")) {
+            if (!(display.innerText)){
+                return;
+            }
             firstNum = display.innerText;
             operator = e.target.innerText;
             display.innerText = "";

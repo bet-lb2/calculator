@@ -28,6 +28,7 @@ const divide = (a, b) => {
 let operator;
 let firstNum;
 let secondNum;
+let isInverted = false;
 
 const operate = (operator, num1, num2) => {
     num1 = Number(num1);
@@ -57,6 +58,20 @@ allClear.addEventListener("click", () => {
     firstNum = undefined;
     secondNum = undefined;
     display.innerText = "";
+})
+
+invert.addEventListener("click", () => {
+    if (isInverted === false) {
+        display.innerText = "-" + display.innerText;
+        isInverted = true;
+    } else {
+        display.innerText = display.innerText.slice(1);
+        isInverted = false;
+    }
+})
+
+toPercent.addEventListener("click", () => {
+    display.innerText = Number(display.innerText) / 100;
 })
 
 numbers.forEach(number => {

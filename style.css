@@ -1,0 +1,78 @@
+:root {
+    --calculator-width: 400px;
+    --calculator-height: 500px;
+    --calculator-padding: 10px;
+    --display-width: calc(var(--calculator-width) - var(--calculator-padding) * 2);
+    --display-height: 80px;
+    --display-margin-bottom: 10px;
+    --button-gap: 5px;
+    --button-width: calc((var(--calculator-width) - var(--calculator-padding) * 2 - var(--button-gap) * 3) / 4);
+    --button-height: calc((var(--calculator-height) - var(--calculator-padding) * 2 - var(--display-height) - var(--display-margin-bottom) - var(--button-gap) * 4) / 5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#calculator {
+    background-color: #333;
+    width: var(--calculator-width);
+    height: var(--calculator-height);
+    padding: var(--calculator-padding);
+
+}
+
+#display {
+    background-color: lightgray;
+    width: var(--display-width);
+    height: var(--display-height);
+    margin-bottom: var(--display-margin-bottom);
+    overflow: hidden;
+    font-size: 4rem;
+    font-family: sans-serif;
+    text-align: end;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--button-gap);
+}
+
+#buttons button {
+    width: var(--button-width);
+    height : var(--button-height);
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#buttons button:hover {
+    cursor: pointer;
+}
+
+.zero {
+    flex-grow: 2;
+}
+
+#all-clear, #invert, #to-percent {
+    background-color: #1E90FF;
+}
+
+.operator {
+    background-color: #FF8F1F;
+}
+
+.number, .decimal-point {
+    background-color: #217C7E;
+}
